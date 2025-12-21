@@ -1,1 +1,1 @@
-# Docker-RK
+Simple Java Application using Dockefile.
