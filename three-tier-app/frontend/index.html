@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Three Tier App</title>
+</head>
+<body>
+  <h1>Production-Grade Three Tier Application</h1>
+  <button onclick="fetchData()">Fetch Data</button>
+  <pre id="output"></pre>
+
+  <script>
+    function fetchData() {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('output').innerText =
+            JSON.stringify(data, null, 2);
+        });
+    }
+  </script>
+</body>
+</html>
