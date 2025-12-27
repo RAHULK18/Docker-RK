@@ -5,10 +5,10 @@ const app = express();
 app.use(express.json());
 
 const db = mysql.createConnection({
-  host: "user-db",
-  user: "root",
-  password: "root",
-  database: "userdb"
+  host: ProcessingInstruction.env.USER_DB_HOST,
+  user: ProcessingInstruction.env.USER_DB_USER,
+  password: ProcessingInstruction.env.USER_DB_PASSWORD ,
+  database: ProcessingInstruction.env.USER_DB_NAME
 });
 
 app.get("/users", (req, res) => {

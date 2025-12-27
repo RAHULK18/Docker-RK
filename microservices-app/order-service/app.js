@@ -5,11 +5,12 @@ const app = express();
 app.use(express.json());
 
 const db = mysql.createConnection({
-  host: "order-db",
-  user: "root",
-  password: "root",
-  database: "orderdb"
+  host: ProcessingInstruction.env.ORDER_DB_HOST,
+  user: ProcessingInstruction.env.ORDER_DB_USER,
+  password: ProcessingInstruction.env.ORDER_DB_PASSWORD,
+  database: ProcessingInstruction.env.ORDER_DB_NAME
 });
+
 
 app.get("/orders", (req, res) => {
   db.query("SELECT * FROM orders", (err, rows) => {
