@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Three Tier App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    button {
+      margin: 8px 0;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ccc;
+      max-height: 300px;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Production-Grade Three Tier Application</h1>
+
+  <button onclick="sendMetrics()">Send Metrics</button>
+  <button onclick="fetchMetrics()">Fetch Stored Metrics</button>
+
+  <h3>Output</h3>
+  <pre id="output">Waiting for action...</pre>
+
+  <script>
+    function sendMetrics() {
+      fetch('/api/metrics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_name: 'web-ui',
+          environment: 'staging',
+          notes: 'Manual test from frontend'
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('output').innerText =
+          JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById('output').innerText = err;
+      });
+    }
+
+    function fetchMetrics() {
+      fetch('/api/metrics')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('output').innerText =
+            JSON.stringify(data, null, 2);
+        })
+        .catch(err => {
+          document.getElementById('output').innerText = err;
+        });
+    }
+  </script>
+</body>
+</html>
