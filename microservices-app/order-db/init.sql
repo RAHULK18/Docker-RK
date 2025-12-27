@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS orderdb;
+USE orderdb;
+
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  item VARCHAR(100)
+);
+

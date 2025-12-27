@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RK MicroService Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+    }
+    header {
+      background: #0b5ed7;
+      color: white;
+      padding: 15px 25px;
+      font-size: 20px;
+    }
+    .container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h3 {
+      margin-top: 0;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+    button {
+      padding: 8px 12px;
+      background: #0b5ed7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    button:hover {
+      background: #084298;
+    }
+    pre {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      max-height: 200px;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header>MicroStack – Production Microservices Dashboard</header>
+
+  <div class="container">
+
+    <!-- USER SERVICE -->
+    <div class="card">
+      <h3>User Service</h3>
+      <input id="username" placeholder="Enter user name" />
+      <button onclick="addUser()">Add User</button>
+      <button onclick="fetchUsers()">Fetch Users</button>
+      <pre id="userOutput">Waiting...</pre>
+    </div>
+
+    <!-- ORDER SERVICE -->
+    <div class="card">
+      <h3>Order Service</h3>
+      <input id="orderItem" placeholder="Enter order item" />
+      <button onclick="addOrder()">Add Order</button>
+      <button onclick="fetchOrders()">Fetch Orders</button>
+      <pre id="orderOutput">Waiting...</pre>
+    </div>
+
+  </div>
+
+  <script>
+    function addUser() {
+      const name = document.getElementById("username").value;
+      if (!name) return alert("Enter user name");
+
+      fetch("/api/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("userOutput").innerText =
+          JSON.stringify(data, null, 2);
+      });
+    }
+
+    function fetchUsers() {
+      fetch("/api/users")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("userOutput").innerText =
+            JSON.stringify(data, null, 2);
+        });
+    }
+
+    function addOrder() {
+      const item = document.getElementById("orderItem").value;
+      if (!item) return alert("Enter order item");
+
+      fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ item })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("orderOutput").innerText =
+          JSON.stringify(data, null, 2);
+      });
+    }
+
+    function fetchOrders() {
+      fetch("/api/orders")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("orderOutput").innerText =
+            JSON.stringify(data, null, 2);
+        });
+    }
+  </script>
+</body>
+</html>
