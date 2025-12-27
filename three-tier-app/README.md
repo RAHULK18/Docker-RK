@@ -2,12 +2,13 @@
 
 A real-world **production-style three-tier application** built using **Docker and Docker Compose**, demonstrating containerized frontend, backend, and database services with proper networking, health checks, persistence, and startup resilience.
 
-
+## ScreenShots
+![Example Image](screenshots/image1.png) <br>
 ---------------------------------------------------
 
 ## 🏗️ Architecture Overview
 
-``` bash 
+```bash 
 
 Client (Browser)
 |
@@ -27,7 +28,6 @@ v
 +-------------+
 
 
----
 
 ## 📦 Tech Stack
 
@@ -56,10 +56,6 @@ three-tier-app/
 │ └── Dockerfile
 └── db/
 └── init.sql
-
-
-
----
 
 ## ⚙️ Key Features & Best Practices
 
@@ -225,8 +221,3 @@ docker compose logs backend
 docker compose logs mysql
 docker volume inspect mysql-data
 
-``` bash ```
-
-
-## ScreenShots
-![Example Image](screenshots/image1.png) <br>
