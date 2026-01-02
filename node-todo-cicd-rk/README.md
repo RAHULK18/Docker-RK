@@ -17,21 +17,21 @@ This project showcases how to:
 
 ## ScreenShots
 ![Example Image](screenshots/image1.png) <br>
-![Example Image](screenshots/screenshots_2.png) <br>
-![Example Image](screenshots/screenshots_3.png) <br>
-![Example Image](screenshots/screenshots_4.png) <br>
-![Example Image](screenshots/screenshots_5.png) <br>
-![Example Image](screenshots/screenshots_6.png) <br>
-![Example Image](screenshots/screenshots_7.png) <br>
-![Example Image](screenshots/screenshots_8.png) <br>
-![Example Image](screenshots/screenshots_9.png) <br>
-![Example Image](screenshots/screenshots_10.png) <br>
-![Example Image](screenshots/screenshots_11.png) <br>
-![Example Image](screenshots/screenshots_12.png) <br>
-![Example Image](screenshots/screenshots_13.png) <br>
-![Example Image](screenshots/screenshots_14.png) <br>
-![Example Image](screenshots/screenshots_15.png) <br>
-![Example Image](screenshots/screenshots_16.png) <br>
+![Example Image](screenshots/image2.png) <br>
+![Example Image](screenshots/image3.png) <br>
+![Example Image](screenshots/image4.png) <br>
+![Example Image](screenshots/image5.png) <br>
+![Example Image](screenshots/image6.png) <br>
+![Example Image](screenshots/image7.png) <br>
+![Example Image](screenshots/image8.png) <br>
+![Example Image](screenshots/image9.png) <br>
+![Example Image](screenshots/image10.png) <br>
+![Example Image](screenshots/image11.png) <br>
+![Example Image](screenshots/image12.png) <br>
+![Example Image](screenshots/image13.png) <br>
+![Example Image](screenshots/image14.png) <br>
+![Example Image](screenshots/image15.png) <br>
+![Example Image](screenshots/image16.png) <br>
 
 ---------------------------------------------------
 
