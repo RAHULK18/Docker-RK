@@ -16,7 +16,7 @@ This project showcases how to:
 ## 🏗️ Architecture Overview
 
 ## ScreenShots
-![Example Image](screenshots/screenshots_1.png) <br>
+![Example Image](screenshots/image1.png) <br>
 ![Example Image](screenshots/screenshots_2.png) <br>
 ![Example Image](screenshots/screenshots_3.png) <br>
 ![Example Image](screenshots/screenshots_4.png) <br>
